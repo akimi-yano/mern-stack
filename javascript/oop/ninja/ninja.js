@@ -8,17 +8,17 @@
 //  add a method: drinkSake() - This should add +10 Health to the Ninja
 
 class Ninja{
-    constructor(name, health=0, speed=3, strength=3){
+    constructor(name){
         this.name=name;
-        this.health=health;
-        this.speed=speed;
-        this.strength=strength;
+        this.health=0;
+        this.speed=3;
+        this.strength=3;
     }
     sayName(){
         console.log(`Name: ${this.name}`)
     }
     showStats(){
-        console.log(`Name: ${this.name} Strength: ${this.strength} Speed: ${this.speed} Health: ${this.health}`)
+        console.log(`Name: ${this.name}, Strength: ${this.strength}, Speed: ${this.speed}, Health: ${this.health}`)
     }
     drinkSake(){
         this.health += 10
