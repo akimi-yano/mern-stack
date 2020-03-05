@@ -18,8 +18,10 @@ const Fetch = () => {
     return (
         <div>
             <button onClick={onClickHandler}>Fetch Pokemon</button>
-            {state.results.map((item,i)=> (<p key={i}>{item.name}</p>)
+            <ul>
+            {state.results.map((item,i)=> (<li key={i}>{item.name}</li>)
             )}
+            </ul>
         </div>
     )
 }
