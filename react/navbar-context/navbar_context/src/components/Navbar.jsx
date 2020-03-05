@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import MyContext from '../context/NameContext';
 
-const Navbar = (props) => {
+const Navbar = () => {
     const context = useContext(MyContext);
     return (
         <div>
-            <h1>Hello {context}</h1>
+            <h1>Hello {context.name}</h1>
         </div>
     )
 }

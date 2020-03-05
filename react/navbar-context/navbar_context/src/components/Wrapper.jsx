@@ -1,21 +1,13 @@
 import React, {useState} from 'react'
-import Navbar from './Navbar'
-import FormWrapper from './FormWrapper'
 import MyContext from '../context/NameContext';
 
-const Wrapper = () => {
-    const [name, setName] = useState(name="");
-    const onChangeHandler = (e) => {
-        setName({
-            Name : e.target.name
-        })
+const Wrapper = (props) => {
+    const [name, setName] = useState("");
     
-    }
     return (
         <div>
-            <MyContext.Provider value={"context value"}>
-            <Navbar/>
-            <FormWrapper handler={onChangeHandler}/>
+            <MyContext.Provider value={{name, setName}}>
+                {props.children}
             </MyContext.Provider>
         </div>
     )
