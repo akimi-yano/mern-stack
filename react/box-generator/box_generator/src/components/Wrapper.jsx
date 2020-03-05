@@ -13,28 +13,37 @@ const Wrapper = (props) =>{
     })
     const onClickHandler=(e)=>{
         const temp = state.array
+        const height = formState.height + "px";
+        const width = formState.width + "px";
         temp.push({
-            ...formState
+            ...formState,
+            height,
+            width
         })
         setState({
             array: temp
+        })
+        setFormState({
+            color: "",
+            height:"",
+            width:"",
         })
     };
     const onChangeHandler=(e)=>{
         setFormState({
             ...formState,
-            [e.target.name]:e.target.name !== "color" ? e.target.value + "px" : e.target.value
+            [e.target.name]:e.target.value
         })
     };
 
     return(
         <div>
             <p>Color</p>
-            <input type="text" name="color" onChange={onChangeHandler}/>
+            <input type="text" name="color" onChange={onChangeHandler} value={formState.color}/>
             <p>Height</p>
-            <input type="text" name="height" onChange={onChangeHandler}/>
+            <input type="text" name="height" onChange={onChangeHandler} value={formState.height}/>
             <p>Width</p>
-            <input type="text" name="width" onChange={onChangeHandler}/>
+            <input type="text" name="width" onChange={onChangeHandler} value={formState.width}/>
             
             <button onClick={onClickHandler}>Add</button>
             <div>
