@@ -12,12 +12,12 @@ const [formState, setFormState] = useState({
     taskName:""
 })
 
-const onCheckboxClickHandler=(e)=>{
+const onCheckboxClickHandler=(e, taskId)=>{
     const temp = checkState.checkedTasks
     if (e.target.checked) {
-        temp.push(parseInt(e.target.name))
+        temp.push(parseInt(taskId))
     } else {
-        temp.splice(temp.indexOf(e.target.name), 1)
+        temp.splice(temp.indexOf(taskId), 1)
     }
     console.log(temp)
     setCheckState({
@@ -26,9 +26,9 @@ const onCheckboxClickHandler=(e)=>{
         deletedTasks:checkState.deletedTasks
     })
 }
-const onDeleteHandler=(e)=>{
+const onDeleteHandler=(e, taskId)=>{
     const temp = checkState.deletedTasks
-        temp.push(parseInt(e.target.name))
+        temp.push(parseInt(taskId))
     console.log(temp)
     setCheckState({
         tasks: checkState.tasks,

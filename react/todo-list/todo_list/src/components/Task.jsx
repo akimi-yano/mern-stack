@@ -4,8 +4,8 @@ const Task = (props) => {
     return (
         <div className={props.style}>
             <p>{props.label}</p>
-            <input type="checkbox" onClick={props.checkboxHandler} name={props.taskId}></input>
-            <button type="submit" onClick={props.deleteHandler} name={props.taskId}>Delete</button>
+            <input type="checkbox" onClick={(e) => props.checkboxHandler(e, props.taskId)}></input>
+            <button type="submit" onClick={(e) => props.deleteHandler(e, props.taskId)}>Delete</button>
         </div>
     )
 }
