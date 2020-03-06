@@ -8,7 +8,7 @@ function parentDivClickedHandler() {
 }
 
 function childDivClickedHandler() {
-  console.log("child clicked!")
+  console.log("child clicked!!")
 }
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
     <div className="App" onClick={parentDivClickedHandler}>
       This is the parent div
       <ChildComponent divClickedHandler={childDivClickedHandler}/>
+      
     </div>
   );
 }
