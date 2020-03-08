@@ -7,6 +7,10 @@ const Add = () => {
         name:"",
         age:0
     })
+    const [errorState, setErrorState] = useState({
+        errorName:"",
+        errorAge:"",
+    })
     const onChangeHandler = (e) => {
         setFormState({
             ...formState,
@@ -17,16 +21,30 @@ const Add = () => {
         e.preventDefault();
         Axios.post('http://localhost:8000/api/v1/new', formState)
         .then(response => {
-            setFormState({
-                name:"",
-                age:0
-            })
-            navigate("/")
+            if(response.data.errors) {
+                console.log("oh no")
+                setErrorState({
+                    ...errorState,
+                    errorName:response.data.errors.name.properties.message
+                })
+            } else {
+                setFormState({
+                    name:"",
+                    age:0
+                })
+                navigate("/")
+            }
+            
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error)
+        })
     }
     return (
         <div>
+            {errorState.errorName.length ? 
+            <p>{errorState.errorName}</p> :null
+            }
             <form onSubmit={onSubmitHandler}>
                 <input type="text" value={formState.name} name="name" onChange={onChangeHandler}/>
                 <input type="number" value={formState.age} name="age" onChange={onChangeHandler}/>

@@ -11,6 +11,8 @@ function App() {
     <div className="App">
       <Router>
         <Dash path="/" />
+        {/* <Hybrid path="/new"/>
+        <Hybrid path="/edit/:id"/> */}
         <Add path="/new" />
         <Edit path="/edit/:id" />
         <Details path="/show/:id" />

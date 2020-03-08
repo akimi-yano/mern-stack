@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 const PrimaryObjectSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type:String,
+        required:true,
+        minlength:[2, "Too short"]
+    },
     age: Number
-}, {timestamps:true});
+}, { timestamps: true });
 
 mongoose.model("PrimaryObject", PrimaryObjectSchema);
