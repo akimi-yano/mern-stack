@@ -10,6 +10,7 @@ const Fetch = (rops) => {
     const onClickHandler = (e) => {
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=807&offset=0")
         .then(response=>{setResponseData(response.data)})
+        .catch(err => console.log(err))
     }
     return (
         <div>
