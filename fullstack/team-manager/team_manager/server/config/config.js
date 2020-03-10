@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/teammanagerDB',{
+mongoose.connect('mongodb://localhost/tmDB',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(()=>console.log('Established a connection to the database'))

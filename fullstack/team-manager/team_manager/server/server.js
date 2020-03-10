@@ -6,9 +6,9 @@ app.use(cors())
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
-require('./models.model')
-require('./config.config')
-require('./routes.routes')(app)
+require('./models/model')
+require('./config/config')
+require('./routes/routes')(app)
 
 app.listen(8000)
 
