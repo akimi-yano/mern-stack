@@ -36,27 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.dashPage{
-  margin:0 auto;
-}
-.button {
-  color:white;
-  text-decoration:none;
-  background-color:black;
-  border-radius:5px;
-  border:1px solid black;
-  padding:10px 15px;
-  font-size:16px;
-  margin:5px;
-}
-.button:hover {
-  color:black;
-  text-decoration:none;
-  background-color:white;
-  border-radius:5px;
-  border:1px solid black;
-  padding:10px 15px;
-  font-size:16px;
-  margin:5px;
-}

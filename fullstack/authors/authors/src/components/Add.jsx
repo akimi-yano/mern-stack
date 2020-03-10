@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Link, navigate} from '@reach/router'
 import Axios from 'axios'
+import Styles from '../styles/Styles'
 
 const Add = () => {
 
@@ -43,13 +44,13 @@ const Add = () => {
     return (
         <div>
             <Link to="/">Home</Link>
-            {errorState.errorName.length?
+            {errorState.errorName.length ?
             <p>{errorState.errorName}</p>:null}
             <h2>Add a new author: </h2>
             <form onSubmit={onSubmitHandler}>
-                <tr><p>name: </p></tr>
-                <tr><input type="text" name="name" value={formState.name} onChange={onChangeHandler}/></tr>
-                <tr><Link to="/" >Cancel</Link> <button type="submit">Submit</button></tr>
+                <p>name: </p>
+                <input style={Styles.input} type="text" name="name" value={formState.name} onChange={onChangeHandler}/>
+                <Link className="button" to="/" >Cancel</Link> <button className="button" type="submit">Submit</button>
             </form>
         </div>
     )
