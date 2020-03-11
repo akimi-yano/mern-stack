@@ -49,8 +49,6 @@ const Add = () => {
         <div>
             {errorState.errorName.length ?
                 <p>{errorState.errorName}</p> : null}
-            {/* {formState.nameError !== undefined && formState.nameError.length ?
-                <p>{formState.nameError}</p> : null} */}
             <h1>Add Player</h1>
             <div>
                 {(formState.name.length > 0 && formState.name.length < 2) ? (<p>{formState.nameError}</p>) : null}

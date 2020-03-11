@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link} from '@reach/router'
-
+import NavLink from './NavLink'
 const Menu = () => {
     return (
         <div>
-            <Link to='players/list'>List</Link> | <Link to='players/addplayer'>Add Player</Link>
+            <NavLink to='players/list'>List</NavLink> | <NavLink to='players/addplayer'>Add Player</NavLink>
         </div>
     )
 }

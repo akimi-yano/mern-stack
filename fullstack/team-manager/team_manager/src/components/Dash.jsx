@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
+import { navigate } from '@reach/router';
 
 const Dash = () => {
     const [state, setState] = useState([]);
@@ -12,10 +13,18 @@ const Dash = () => {
     }, [deleteState])
 
     const onDeleteHandler = (e, item) => {
-        alert("Are you sure you want to delete this player?")
-        Axios.delete(`http://localhost:8000/api/v1/delete/${item._id}`)
+        if (window.confirm('Are you sure you want to delete this player?')) {
+            Axios.delete(`http://localhost:8000/api/v1/delete/${item._id}`)
             .then(response => setDeleteState(!deleteState))
             .catch(error => console.log(error))
+        } else {
+            navigate('/players/list')
+        }
+        // the below is if  I want to just  ask if it is yes
+        // alert("Are you sure you want to delete this player?")
+        // Axios.delete(`http://localhost:8000/api/v1/delete/${item._id}`)
+        //     .then(response => setDeleteState(!deleteState))
+        //     .catch(error => console.log(error))
     }
 
     return (

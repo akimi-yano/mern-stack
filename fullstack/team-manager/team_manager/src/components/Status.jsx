@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { Link } from '@reach/router'
+import NavLink from './NavLink'
 
 const Status = (props) => {
     const [state, setState] = useState([])
@@ -37,7 +38,7 @@ const Status = (props) => {
     return (
         <div>
             <h1>Player Status - Game</h1> {props.uri.includes(1) ? <h1>1</h1> : props.uri.includes(2) ? <h1>2</h1> : <h1>3</h1>}
-            <Link to="/status/game/1">Game1</Link> | <Link to="/status/game/2">Game2</Link> | <Link to="/status/game/3">Game3</Link>
+            <NavLink to="/status/game/1">Game1</NavLink> | <NavLink to="/status/game/2">Game2</NavLink> | <NavLink to="/status/game/3">Game3</NavLink>
             <div><p style={{ display: 'inline-block' }}>Player Name</p><p style={{ display: 'inline-block', margin: '0px 500px' }}>Status</p></div>
 
             {state.map((item, index) => (

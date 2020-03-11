@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Router} from '@reach/router';
 import Dash from './components/Dash';
@@ -7,8 +7,11 @@ import Redirect from './components/Redirect';
 import Header from './components/Header';
 import Menu from './components/Menu';
 import Status from './components/Status';
-
-function App() {
+function App(props) {
+  const [linkState, setLinkState] = useState("")
+  useEffect(() => {
+    console.log(props)
+  },[])
   return (
     <div className="App">
       <Header/>
