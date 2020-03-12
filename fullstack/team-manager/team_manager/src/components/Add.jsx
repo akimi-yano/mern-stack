@@ -57,7 +57,7 @@ const Add = () => {
                 <form onSubmit={onSubmitHandler}>
                     <p>Player Name: </p>
                     <input type="text" name="name" onChange={onChangeHandler} value={formState.name}></input>
-                    <p>Preffered Position: </p>
+                    <p>Preferred Position: </p>
                     <input type="text" name="position" onChange={onChangeHandler} value={formState.position}></input>
                     <button type="submit">Add</button>
                 </form>
