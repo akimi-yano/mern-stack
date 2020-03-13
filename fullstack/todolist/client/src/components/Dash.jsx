@@ -5,7 +5,7 @@ import axios from 'axios'
 const Dash = () => {
     const [state, setState] = useState([])
     const [deleteState, setDeleteState] = useState(false)
-    const [doneState, setDoneState] = useState(false)
+    
     useEffect(() => {
         axios.get("http://localhost:8000/api/v1")
             .then(response => setState(response.data))
