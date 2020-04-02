@@ -6,7 +6,7 @@ import countriesLayer from '../data/world'
 // import { Link } from 'react-router';
 // import repositionMap from './utilities.jsx';
 // import {browserHistory} from 'react-router'
-import mapboxConfig from '../config/mapboxConfig'
+import mapboxConfig from '../../../../../../multilingual-video-chat/src/config/mapboxConfig'
 
 import {navigate} from "@reach/router"
 
